@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "homepage": "https://kites.nodejs.vn",
   "scripts": {
+    "postinstall": "bundle install --path ./gem_modules/bundle",
     "build": "bundle exec gulp build",
     "deploy": "bundle exec gulp deploy"
   },

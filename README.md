@@ -14,8 +14,8 @@
 * Required Node.js v6.9.1 and NPM v3.10.8 or newer
 * Steps to do:
     * `cd path/to/website/project`
-    * `npm run install`
-    * `bundle install --path ./gem_modules/bundle`
+    * `npm install`
+    * //postInstall: `bundle install --path ./gem_modules/bundle`
 
 ## #3. Build project
 
