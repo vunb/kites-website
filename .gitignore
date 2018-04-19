@@ -1,0 +1,11 @@
+Gemfile.lock
+node_modules/
+gem_modules/
+js/site.js
+_site/
+.bundle
+.sass-cache/
+.jekyll-metadata
+.vscode
+npm-debug.log
+docs

@@ -1,0 +1,124 @@
+.api-toc-button {
+	position: fixed;
+	z-index: 50;
+	background: center url(/images/toc.svg) no-repeat;
+	background-size: 50%;
+	background-color: #fff;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-right: none;
+	@include box-shadow(0px 0px 5px 0px rgba(#111, 0.5));
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+
+	@include breakpoint($computer) {
+		$height: 120px;
+		$width: 65px;
+
+		right: 0;
+		top: 50%;
+		margin-top: -$height / 2;
+		height: $height;
+		width: $width;
+	}
+
+	@include breakpoint($mobile) {
+		$height: 60px;
+		$width: 40px;
+
+		right: 0;
+		top: 50%;
+		margin-top: -$height / 2;
+		height: $height;
+		width: $width;
+	}
+}
+
+.api-toc-wrapper {
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	top: 0;
+	background: rgba(#fff, 0.96);
+	border-color: transparent;
+	border-style: solid;
+	border-width: 8px 0;
+	font-size: 0.95rem;
+	@include box-shadow(-5px 0px 8px 0px rgba(#333, 0.1));
+	@include transition-duration(0.2s);
+	overflow-y: auto;
+
+	@include breakpoint($computer) {
+		right: -360px;
+		width: 340px;
+		padding: 2rem 1rem;
+	}
+
+	@include breakpoint($mobile) {
+		right: -270px;
+		width: 250px;
+		padding: 1rem 0.25rem;
+	}
+
+	&.visible {
+		right: 0px;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: inherit;
+		font-weight: inherit;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		max-width: 100%;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	> ul {
+		// First level.
+		> li {
+			display: block;
+			margin: 1.5em 0.75em 0.25em 0.75em;
+			font-weight: 400;
+			color: #19170f;
+
+			&:first-child {
+				margin-top: 0.75em;
+			}
+
+			// Second level.
+			> ul {
+				margin-left: 0.5em;
+
+				> li {
+					margin: 0 0 0.5em 0;
+					font-size: 0.95em;
+					font-weight: 400;
+					color: $color-highlight-dark;
+
+					// Third level (API).
+					> ul {
+						> li {
+							font-family: 'Monaco', 'Consolas', 'Andale Mono', monospace;
+							letter-spacing: -0.04em;
+							font-size: 0.9em;
+							line-height: 1.3em;
+							color: #666;
+						}
+					}
+				}
+			}
+		}
+	}
+}

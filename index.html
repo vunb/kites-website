@@ -1,0 +1,57 @@
+---
+home : true
+---
+
+<div class="banner loading">
+	<h1>k<span class="highlight small">i</span>tes<span class="highlight"><span class="merge">.</span>js</span></h1>
+
+	<p class="description">Template-based Web API Framework</p>
+</div>
+
+<div class="menu-button loading"></div>
+
+<div class="install">
+	<pre class="loading"><code><span class="no-select">$ </span>npm install -g @kites/cli<br><span class="no-select">$ </span>kites init my-project --template chatbot</code></pre>
+</div>
+
+<div class="diagram loading"></div>
+
+<div class="boxes">
+	<div class="wrapper">
+		<div class="box first loading">
+			<h3>Template-based</h3>
+
+			<p>Kites is a framework providing dynamic applications assembling and API routing. It contains a lot of templates and extensions help build up applications quickly.</p>
+		</div>
+
+		<div class="box second loading">
+			<h3>Extensions auto discovery</h3>
+
+			<p>Kites by default auto discovers extensions in the application's directory tree. This means kites by default searches for files kites.config.js which describes the extensions and applies all the extensions that are found.</p>
+		</div>
+
+		<div class="box third loading">
+			<h3>Lightweight Web API Framework</h3>
+
+			<p>Instead of creating yet another opinionated server, kites is a Node.js module which can be assembled into a larger application or made standalone with just a few lines of JavaScript.</p>
+		</div>
+	</div>
+</div>
+
+<div class="shields loading">
+	<a class="npm-version" href="https://npmjs.org/package/kites">
+		<img id="kites-npm-shield" src="" alt="">
+	</a>
+
+	<a class="npm-version" href="https://npmjs.org/package/@kites/cli">
+		<img id="kites-cli-npm-shield" src="" alt="">
+	</a>
+</div>
+
+<script>
+	setTimeout(function()
+	{
+		document.getElementById('kites-npm-shield').src = 'https://img.shields.io/npm/v/kites.svg?label=kites';
+		document.getElementById('kites-cli-npm-shield').src = 'https://img.shields.io/npm/v/@kites/cli.svg?label=@kites/cli';
+	}, 500);
+</script>

@@ -1,0 +1,353 @@
+[data-content='default'] {
+	$padding: 16px;
+
+	position: relative;
+	padding: $padding;
+	color: $color-text;
+	width: 100%;
+	overflow: hidden;
+
+	@include breakpoint($computer) {
+		margin: 4rem auto;
+		padding-top: $padding + $header-height-computer;
+		width: 90%;
+		max-width: 1024px;
+		font-size: 1rem;
+		text-align: left;
+	}
+
+	@include breakpoint($mobile) {
+		margin: 2.5rem auto;
+		padding-top: $padding + $header-height-mobile;
+		width: 100%;
+		font-size: 0.9rem;
+		text-align: left;
+	}
+
+	// Fix fixed header size for anchor links
+	h2:before, h3:before, h4:before {
+		content: '';
+		display: block;
+		visibility: hidden;
+
+		@include breakpoint($computer) {
+			height: $header-height-computer * 1.3;
+			margin-top: -$header-height-computer * 1.3;
+		}
+
+		@include breakpoint($mobile) {
+			height: $header-height-mobile * 1.3;
+			margin-top: -$header-height-mobile * 1.3;
+		}
+	}
+
+	h1 {
+		font-family: 'Poiret One';
+		color: #000;
+		text-align: left;
+		margin-bottom: 1em;
+		clear: both;
+
+		@include breakpoint($computer) {
+			font-size: 2.5em;
+		}
+
+		@include breakpoint($mobile) {
+			font-size: 2em;
+		}
+	}
+
+	h2 {
+		// color: $color-highlight-dark;
+		color: #000;
+		text-align: left;
+		// border-bottom: 1px solid $color-highlight-dark;
+		border-bottom: 1px solid #000;
+		margin-top: 2em;
+		margin-bottom: 1.5em;
+		clear: both;
+
+		@include breakpoint($computer) {
+			font-size: 1.8em;
+			line-height: 1.8em;
+		}
+
+		@include breakpoint($mobile) {
+			font-size: 1.5em;
+			line-height: 1.5em;
+		}
+	}
+
+	h3 {
+		font-size: 1.4em;
+		line-height: 1.5em;
+		color: #151515;
+		border-bottom: 1px solid rgba($color-highlight-dark, 0.75);
+		text-align: left;
+		margin-top: 2em;
+		margin-bottom: 1.5em;
+		clear: both;
+	}
+
+	&.h3color h3 {
+		color: $color-highlight-dark;
+	}
+
+	h4 {
+		font-size: 1.25em;
+		color: #262626;
+		text-align: left;
+		margin-top: 2em;
+		margin-bottom: 1.5em;
+		clear: both;
+
+		&.code {
+			font-size: 1em;
+			font-family: 'Monaco', 'Andale Mono', monospace;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	h5 {
+		font-size: 1em;
+		color: red;
+		text-align: left;
+		margin-top: 1.5em;
+		margin-bottom: 1em;
+		clear: both;
+	}
+
+	p {
+		line-height: 1.5em;
+		margin-top: 0.75em;
+		margin-bottom: 0.75em;
+	}
+
+	ul {
+		line-height: 1.5em;
+		margin-left: 1.5em;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		list-style-type: disc;
+
+		@include breakpoint($mobile) {
+			text-align: left;
+		}
+
+		li ul {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	div.big-list {
+		ul {
+			font-size: 1.4em;
+
+			li {
+				margin-top: 0.75em;
+				margin-bottom: 0.75em;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: $color-highlight-dark;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&.inline-icon {
+			margin: 0 2px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			img {
+				width: 24px;
+				height: 24px;
+				border-radius: 4px;
+				opacity: 0.75;
+				@include transition-property(opacity);
+				@include transition-duration(0.2s);
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		> code {
+			color: $color-highlight-dark !important;
+		}
+	}
+
+	strong {
+		font-weight: 400;
+		color: #000;
+	}
+
+	em {
+		font-style: italic;
+	}
+
+	// @import a theme for rouge.
+	@import 'rouge_theme';
+
+	div.highlighter-rouge {
+		margin: 2em auto;
+
+		@include breakpoint($computer) {
+			width: 92%;
+		}
+
+		@include breakpoint($mobile) {
+			width: 100%;
+		}
+	}
+
+	:not(pre) > code {
+		font-family: 'Monaco', 'Andale Mono', monospace;
+		font-size: 0.9em;
+		color: #444;
+		white-space: pre;
+		background-color: rgba(#eee, 0.85);
+		border-radius: 4px;
+		padding: 1px 2px;
+	}
+
+	section {
+		margin: 0;
+
+		@include breakpoint($computer) {
+			padding-left: 1.5em;
+		}
+
+		@include breakpoint($mobile) {
+			padding-left: 0.5em;
+		}
+	}
+
+	div.note {
+		margin: 2em auto;
+		padding: 1em;
+		font-size: 0.95em;
+		color: shade($color-text, 60%);
+		background-color: rgba(#91d1e4, 0.5);
+		border-radius: 4px;
+
+		&.warn {
+			background-color: rgba(#ec5e5e, 0.5);
+		}
+
+		@include breakpoint($computer) {
+			width: 92%;
+		}
+
+		@include breakpoint($mobile) {
+			width: 100%;
+		}
+
+		> *:first-child {
+			margin-top: 0 !important;
+		}
+
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	.table-wrapper {
+		margin: 2em 0;
+		overflow: auto;
+
+		table {
+			width: 100%;
+			margin: 0 auto;
+			border-collapse: collapse;
+			background-color: rgba(#333, 0.075);
+			font-size: 0.9em;
+
+			th {
+				padding: 0.75em;
+				text-align: center;
+				color: rgba(#fff, 0.9);
+				background-color: rgba($color-highlight-dark, 0.85);
+			}
+
+			td {
+				padding: 0.75em;
+				line-height: 1.5em;
+				text-align: left;
+			}
+
+			th, td {
+				border: 1px solid #fff;
+			}
+		}
+
+		&.L2 {
+			th:nth-child(2),
+			td:nth-child(2) {
+				min-width: 300px;
+			}
+		}
+
+		&.L3 {
+			th:nth-child(3),
+			td:nth-child(3) {
+				min-width: 300px;
+			}
+		}
+
+		&.M5 {
+			th:nth-child(5),
+			td:nth-child(5) {
+				min-width: 200px;
+			}
+		}
+	}
+
+	img {
+		vertical-align: bottom;
+
+		&.round {
+			border-radius: 50%;
+		}
+
+		&.left {
+			opacity: 0.85;
+
+			@include breakpoint($computer) {
+				float: left;
+				margin: 0 2em 1em 0;
+			}
+
+			@include breakpoint($mobile) {
+				display: block;
+				margin: 2em auto;
+			}
+		}
+	}
+
+	// Remove margin-top for first sibling elements.
+	h1 + h2, h1 + h3, h1 + p, h1 + ul, h1 + pre,
+	h2 + h3, h2 + h4, h2 + p, h2 + ul, h2 + pre,
+	h3 + h4, h3 + p, h3 + ul, h3 + pre,
+	h4 + h5, h4 + p, h4 + ul, h4 + pre,
+	ul + p,
+	p + ul {
+		margin-top: 0 !important;
+	}
+	section > *:last-child {
+		margin-bottom: 0 !important;
+	}
+}

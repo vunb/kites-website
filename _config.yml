@@ -1,0 +1,44 @@
+# source: .
+
+exclude:
+  - NO_GIT
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules
+  - gem_modules
+  - lib
+  - dist
+  - gulpfile.js
+  - LICENSE
+  - TODO.md
+  - README.md
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  auto_ids: false
+  toc_levels: 2..4
+  # Remove typographic single quotes (but allow typographic double quotes).
+  smart_quotes: [ 'apos', 'apos', 'ldquo', 'rdquo' ]
+  syntax_highlighter: rouge
+
+gems:
+  - jekyll-compass
+  - breakpoint
+  - rouge
+
+permalink: pretty
+
+defaults:
+  -
+    scope:
+      path: ''
+    values:
+      layout: layout
+
+custom:
+  canonicalUrl: 'https://kites.nodejs.vn'
+  currentYear: 2018

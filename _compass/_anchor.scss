@@ -1,0 +1,16 @@
+.anchorjs-link {
+	opacity: 0;
+	text-decoration: none !important;
+	font-size: 120%;
+}
+*:hover > .anchorjs-link,
+.anchorjs-link:focus  {
+	/* To fade links as they appear, change transition-property from 'color' to 'all' */
+	opacity: 1;
+	@include transition(color .16s linear);
+}
+
+.anchorjs-link:link    { color: $color-highlight-dark; }
+.anchorjs-link:visited { color: $color-highlight-dark; }
+.anchorjs-link:hover   { color: $color-highlight; }
+.anchorjs-link:active  { color: $color-highlight; }

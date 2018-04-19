@@ -1,0 +1,308 @@
+@import 'compass/reset';
+@import 'compass/css3/box-sizing';
+@import 'compass/css3/images';
+@import 'compass/css3/transform';
+@import 'compass/css3/transition';
+@import 'compass/css3/box-shadow';
+@import 'compass/css3/flexbox';
+@import 'compass/css3/user-interface';
+@import 'compass/css3/hyphenation';
+@import 'breakpoint';
+
+// Import fonts.
+@import './fonts';
+// Import my mixins.
+@import './mixins';
+
+$computer: min-width 901px;
+$mobile: max-width 900px;
+
+$header-height-computer: 64px;
+$header-height-mobile: 56px;
+
+$color-text: #222;
+$color-highlight: #1fb7e8;
+$color-highlight-dark: #1a8fc5;
+
+* {
+	@include box-sizing(border-box);
+}
+
+html {
+	height: 100%;
+	font-family: 'Roboto', 'Helvetica', 'sans-serif';
+
+	@include breakpoint($computer) {
+		font-size: 16px;
+		font-weight: 300;
+	}
+
+	@include breakpoint($mobile) {
+		font-size: 16px;
+		font-weight: 300;
+	}
+}
+
+body {
+	min-height: 100%;
+	// Should not be needed, but IE does not takes all the height without it.
+	height: 100%;
+	overflow: auto;
+	@include display-flex;
+	@include flex-direction(column);
+	@include align-items(center);
+	background-repeat: no-repeat;
+	@include background-image(linear-gradient(110deg,
+		#fff 0%,
+		#dadcdc 25%,
+		#f4f4f4 25%,
+		#f4f4f4 100%));
+	background-color: #f4f4f4;
+
+	@include breakpoint($computer) {
+		// Just set fixed background on computer (it's not supported in iOS Safari
+		// and scrolling becomes ugly in Chrome/Firefox for mobile).
+		background-attachment: fixed;
+
+		// iOS devices (iPad) do not support background-attachment: fixed.
+		&.ios {
+			background-attachment: initial;
+		}
+	}
+
+	> .logo-mini {
+		display: none;
+	}
+
+	@import 'menu';
+
+	> .header {
+		position: fixed;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		right: 0;
+		@include display-flex;
+		@include flex-direction(row);
+		@include justify-content(space-between);
+		@include align-items(center);
+
+		@include breakpoint($computer) {
+			height: $header-height-computer;
+			padding: 0 3.5rem;
+			font-size: 2.5rem;
+			@include background-image(linear-gradient(110deg,
+				rgba(#000, 0.9) 0%,
+				rgba(#282828, 0.9) 25%,
+				rgba(#060606, 0.9) 25%,
+				rgba(#111, 0.9) 100%));
+			background-attachment: fixed;
+
+			// iOS devices (iPad) do not support background-attachment: fixed.
+			&.ios {
+				@include background-image(none);
+				background-color: rgba(#222, 0.9);
+			}
+		}
+
+		@include breakpoint($mobile) {
+			height: $header-height-mobile;
+			padding: 0 16px;
+			font-size: 2rem;
+			background-color: rgba(#222, 0.9);
+		}
+
+		h1 {
+			@include kites-logo(true);
+			margin-bottom: 0.1em;
+
+			a {
+				color: inherit !important;
+				text-decoration: none;
+			}
+		}
+
+		> .menu-button {
+			background-position: center;
+			background-repeat: no-repeat;
+			cursor: pointer;
+			background-image: url('/images/menu-white.svg');
+			background-size: contain;
+			@include transition-property(opacity);
+			@include transition-duration(0.25s);
+			-webkit-tap-highlight-color: transparent;
+
+			&.hidden {
+				opacity: 0;
+			}
+
+			@include breakpoint($computer) {
+				width: 48px;
+				height: 48px;
+				opacity: 0.9;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+			@include breakpoint($mobile) {
+				width: 32px;
+				height: 32px;
+				opacity: 0.9;
+			}
+		}
+	}
+
+	> .content {
+		@include flex(100 0 auto);
+		@include display-flex;
+		@include flex-direction(column);
+		position: relative;
+		width: 100%; // Nedded for IE 11.
+		@include transition-property(opacity);
+		@include transition-delay(0.15s);
+		@include transition-duration(0.25s);
+
+		&.loading {
+			opacity: 0;
+		}
+
+		> [data-content] {
+			@include flex(100 0 auto);
+		}
+
+		// Import categories.
+		@import 'home';
+		@import 'default';
+
+		// Import tools.
+		@import 'breadcrumbs';
+		@import 'anchor';
+		@import 'api_toc';
+	}
+
+	> .footer {
+		@include flex(0 0 auto);
+		width: 100%;
+		padding: 1.5rem 2rem 2.25rem 2rem;
+		background-color: rgba(#222, 0.1);
+		font-size: 1rem;
+
+		@include breakpoint($computer) {
+			@include transition-property(background-color);
+			@include transition-duration(0.5s);
+
+			&:hover {
+				background-color: rgba(#111, 0.85);
+
+				> .links > a {
+					color: rgba(#fff, 0.85);
+					border-color: rgba(#fff, 0.85);
+				}
+			}
+		}
+
+		> .links {
+			@include breakpoint($computer) {
+				@include display-flex;
+				@include flex-direction(row);
+				@include justify-content(center);
+			}
+
+			> a {
+				display: block;
+				height: 2.4rem;
+				line-height: 2.4rem;
+				color: #111;
+				text-align: center;
+				text-decoration: none;
+				border-bottom: 1px solid rgba(#fff, 0.75);
+				@include transition-duration(0.2s);
+				-webkit-tap-highlight-color: transparent;
+
+				&:hover {
+					color: $color-highlight;
+					border-color: $color-highlight;
+				}
+
+				@include breakpoint($computer) {
+					margin: 0 1rem;
+					width: 10rem;
+				}
+			}
+		}
+	}
+
+	> .arrow-up {
+		position: fixed;
+		cursor: pointer;
+		background-image: url('/images/arrow-up.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		// Hidden by default.
+		z-index: -1;
+		opacity: 0;
+		@include transition-property(opacity);
+		@include transition-duration(0.2s);
+		-webkit-tap-highlight-color: transparent;
+
+		&.visible {
+			z-index: 5;
+			opacity: 0.5;
+
+			&:hover {
+				opacity: 0.75;
+			}
+		}
+
+		@include breakpoint($computer) {
+			bottom: 2rem;
+			right: 2rem;
+			width: 50px;
+			height: 50px;
+		}
+
+		@include breakpoint($mobile) {
+			bottom: 16px;
+			right: 16px;
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	> .announcement {
+		position: fixed;
+		z-index: 200;
+		width: 400px;
+		@include transform(rotate(-45deg));
+		color: rgba(#fff, 0.9);
+		background-color: rgba(#f06a2a, 0.9);
+		@include box-shadow(0px 0px 5px 0px rgba(#333, 0.6));
+		text-align: center;
+
+		@include breakpoint($computer) {
+			bottom: 60px;
+			right: -120px;
+			font-size: 1rem;
+			line-height: 2.2rem;
+			opacity: 0.85;
+			@include transition-property(bottom, right);
+			@include transition-delay(2.5s);
+			@include transition-duration(.25s);
+
+			&.loading {
+				bottom: -120px;
+				right: -300px;
+			}
+		}
+
+		@include breakpoint($mobile) {
+			bottom: 45px;
+			right: -145px;
+			font-size: 0.8rem;
+			line-height: 1.8rem;
+		}
+	}
+}

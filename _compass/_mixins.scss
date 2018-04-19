@@ -1,0 +1,22 @@
+@mixin kites-logo($light: false) {
+	font-family: 'Poiret One';
+	letter-spacing: -0.04em;
+	@if ($light) {
+		color: rgba(#fff, 0.95);
+	} @else {
+		color: #3b3a33;
+	}
+	-webkit-tap-highlight-color: transparent;
+
+	span.small {
+		font-size: 0.85em;
+	}
+
+	span.merge {
+		letter-spacing: -0.1em;
+	}
+
+	span.highlight {
+		color: $color-highlight;
+	}
+}
