@@ -55,7 +55,8 @@ gulp.task('rsync', function(done)
 		dest      : './dist',
 		ssh       : true,
 		recursive : true,
-		deleteAll : true,
+		delete    : true,
+		exclude	  : ['.git', 'docs'],
 		args      : [ '--no-perms' ],
 		onStdout  : (data) =>
 		{
