@@ -34,7 +34,7 @@ Với mục tiêu là dễ dàng tạo ra một máy chủ phục vụ một ứ
 
 ```bash
 # tại thư mục của dự án
-kites fly
+kites up
 ```
 
 (2) hoặc:
