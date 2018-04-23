@@ -5,7 +5,7 @@ anchors : true
 
 # Overview
 
-**Kites** là một dự án mã nguồn mở đầy tham vọng với mục tiêu là tạo ra các ứng dụng Web một cách nhanh chóng, rất phù hợp cho doanh nghiệp vừa và nhỏ.
+**Kites** là một dự án mã nguồn mở với mục tiêu là tạo ra các ứng dụng Web dựa trên các bản mẫu một cách nhanh chóng và dễ dàng.
 
 Bạn có thể khởi tạo nhanh chóng một ứng dụng kites bằng lệnh sau đây:
 
@@ -13,7 +13,9 @@ Bạn có thể khởi tạo nhanh chóng một ứng dụng kites bằng lệnh
 kites init my-project --template restful
 ```
 
-Kết thúc lệnh trên là bạn đã tạo ra một dự án RESTful API, rất đơn giản và nhanh chóng.
+Kết thúc lệnh trên là bạn đã tạo ra một dự án RESTful API, rất đơn giản?
+
+* [Xem chi tiết hướng dẫn](/documentation/guide/) tạo một project với kites [tại đây](/documentation/guide/).
 
 ## Mục tiêu của dự án Kites
 
