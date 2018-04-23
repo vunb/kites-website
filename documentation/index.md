@@ -13,11 +13,11 @@ title : Documentation
 
 * [Overview](/documentation/overview/)
 
-### kites
+### kites-cli
 
-* [CLI](/documentation/kites/cli)
-* [API](/documentation/kites/api)
-* [Templates](/documentation/kites/templates)
+* [Installation](/documentation/kites-cli/installation)
+* [API](/documentation/kites-cli/cli)
+* [Templates](/documentation/kites-cli/templates)
 
 ### kites-engine
 
