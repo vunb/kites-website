@@ -9,9 +9,10 @@ title : Documentation
 
 <div markdown="1">
 
-#### General
+### kites
 
 * [Overview](/documentation/overview/)
+* [How to create a new project](/documentation/guide/)
 
 ### kites-cli
 
