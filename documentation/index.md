@@ -13,12 +13,12 @@ title : Documentation
 
 * [Overview](/documentation/overview/)
 * [How to create a new project](/documentation/guide/)
+* [Templates](/documentation/templates)
 
 ### kites-cli
 
 * [Installation](/documentation/kites-cli/installation)
 * [API](/documentation/kites-cli/cli)
-* [Templates](/documentation/kites-cli/templates)
 
 ### kites-engine
 
