@@ -13,4 +13,16 @@ title : Documentation
 
 * [Overview](/documentation/overview/)
 
+### kites
+
+* [CLI](/documentation/kites/cli)
+* [API](/documentation/kites/api)
+* [Templates](/documentation/kites/templates)
+
+### kites-engine
+
+* [Installation](/documentation/kites-engine/installation)
+* [API](/documentation/kites-engine/api)
+
+
 </div>
