@@ -13,7 +13,7 @@ title : Documentation
 
 * [Overview](/documentation/overview/)
 * [How to create a new project](/documentation/guide/)
-* [Templates](/documentation/templates)
+* [Templates](/documentation/kites/templates)
 
 ### kites-cli
 
