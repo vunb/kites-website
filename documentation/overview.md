@@ -13,9 +13,34 @@ Bạn có thể khởi tạo nhanh chóng một ứng dụng kites bằng lệnh
 kites init my-project --template restful
 ```
 
-Kết thúc lệnh trên là bạn đã tạo ra một dự án RESTful API, rất đơn giản?
+Kết thúc lệnh trên là bạn đã tạo ra một dự án RESTful API, rất đơn giản phải không?
 
 * [Xem chi tiết hướng dẫn](/documentation/guide/) tạo một project với kites [tại đây](/documentation/guide/).
+
+Sơ lược qua về kỹ thuật thì **kites** tự động phát hiện các **extensions** đã được install trong thư mục `node_modules`, do đó, khi khởi chạy các phần mở rộng này được nạp tự động, một chương trình đơn giản nhất trông như thế này:
+
+* Tham số `discover: true` nghĩa là nhắc **kites** tự động nạp tất cả các **extensions** phát hiện được trong thư mục *node_modules*.
+
+```js
+'use strict'
+const engine = require('@kites/engine');
+
+/**
+ * minimalist kites application
+ */
+engine({
+        loadConfig: true,
+        discover: true
+    })
+    .init()
+    .then((kites) => {
+        kites.logger.info('Hello world!');
+    })
+    .catch((e) => {
+        console.error(e.stack);
+        process.exit(1);
+    })
+```
 
 ## Mục tiêu của dự án Kites
 
@@ -47,14 +72,14 @@ docker-compose build
 docker-compose up
 ```
 
-## Templates - Các khuôn mẫu dự án
+## Templates - Các khuôn mẫu dự án dựng sẵn
 
 
 * [x] **`basic`**: Template for building from scratch (**default**, current)
-* [x] **`apidoc`**: Template for API Documentation, [nodevn/kites-apidoc](https://github.com/nodevn/kites-apidoc)
-* [x] `express`: Template for Express Application
-* [ ] `restful`: Template for generating a RESTful API Server
-* [ ] `framework`: Assembling all into complete ship (default, next stage), [document](https://kites.nodejs.vn/documentation)
+* [x] **`apidoc`**: Template for API Documentation, [nodevn/kites-template-apidoc](https://github.com/nodevn/kites-template-apidoc)
+* [x] `express`: Template for Express Application, [nodevn/kites-template-express](https://github.com/vunb/kites-template-express)
+* [ ] `restful`: Template for generating a RESTful API Server, [nodevn/kites-template-restful](https://github.com/vunb/kites-template-restful)
+* [ ] `mvc`: Assembling all into complete ship (default), [nodevn/kites-template-mvc](https://github.com/vunb/kites-template-mvc)
 * [ ] `spa`: Template for generating a Single Page Application (SPA)
 * [ ] `cms`: Template for generating a Content Management System (CMS)
 * [ ] `chat`: Template for generating a Chat application
