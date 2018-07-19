@@ -46,6 +46,7 @@ engine({
 
 * Là 1 framework tạo ra các ứng dụng web đầy tham vọng
 * Là 1 công cụ dòng lệnh, hỗ trợ khởi tạo nhanh dự án
+* Kết nối với tất cả các loại cơ sở dữ liệu: `MongoDB`, `Cassandra`, `MySQL`, `Postgres`, `Redis`, ...
 * Mô-đun hóa các thành phần, tiện ích tái sử dụng thành các phần mở rộng (extensions)
 * Phân tách tầng ứng dụng: device access layer, database access layer, cron jobs, ...
 * Đóng gói các dự án cơ sở thành khuôn mẫu (templates)

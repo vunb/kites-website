@@ -24,7 +24,7 @@
 ## #4. Publish project
 
 * Deploy: `npm run deploy`
-* Publish: `git add . && git push origin gh-pages`
+* Publish: `cd dist && git add . && git push origin gh-pages`
 
 # gh-pages as a project submodule
 
