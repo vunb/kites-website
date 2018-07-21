@@ -8,7 +8,7 @@ title : Guide
 
 Sau đây là hướng dẫn khởi tạo một dự án kites với bộ mẫu dựng sẵn: `mvc`
 
-### 1. Cài đặt Kites cli
+### #1. Cài đặt Kites cli
 
 Trước hết bạn cần cài đặt kites cli để có được công cụ gõ trên cửa sổ dòng lệnh:
 
@@ -16,7 +16,7 @@ Trước hết bạn cần cài đặt kites cli để có được công cụ g
 npm install -g @kites/cli
 ```
 
-#### #1. Khởi tạo dự án
+### #2. Khởi tạo dự án
 
 Sau đó, bạn có thể khởi tạo dự án của mình bằng các lệnh sau:
 
@@ -34,7 +34,7 @@ npm install
 npm start
 ```
 
-### #2. Phát triển dự án
+### #3. Phát triển dự án
 
 ```bash
 # chạy ở chế độ phát triển
@@ -45,7 +45,7 @@ Bố cục của dự án được tổ chức như hình sau đây.
 
 ![kites mvc](/images/kites/templates/mvc2.PNG)
 
-### #3. Thiết lập cấu hình
+### #4. Thiết lập cấu hình
 
 Lưu ý: Thiết lập cấu hình kết nối cho kites trong file `kites.config.json`
 
