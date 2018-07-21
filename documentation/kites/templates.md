@@ -18,5 +18,6 @@ class   : h3color
 # Templates
 
 {% include templates/requirements.md %}
+{% include templates/mvc.md %}
 {% include templates/apidoc.md %}
 {% include templates/chatbot.md %}

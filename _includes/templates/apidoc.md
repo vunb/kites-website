@@ -17,7 +17,7 @@ Tài liệu hướng dẫn sử dụng API thường được khởi tạo ([1](
 
 * Truy cập demo: [https://kites.nodejs.vn/docs](https://kites.nodejs.vn/docs)
 * Một trang khác: [https://docs.yeu.ai/](https://docs.yeu.ai/)
-* Trang của bạn?
+* Trang của bạn sẽ sử dụng **kites** chứ ?
 
 
 ### Cách tạo ApiDoc với kites như thế nào?
