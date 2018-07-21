@@ -59,7 +59,9 @@ npm run dev
 
 Bố cục của dự án được tổ chức như hình sau đây.
 
-![mvc](/images/kites/templates/mvc2.png)
+![kites mvc](/images/kites/templates/mvc2.PNG)
+
+</section>
 
 #### #3. Thiết lập cấu hình
 {: #kites-init-mvc-2 .code}
@@ -107,6 +109,4 @@ Dưới đây là nội dung các cấu hình được thiết lập mặc đị
     }
 }
 ```
-
-</section>
 
