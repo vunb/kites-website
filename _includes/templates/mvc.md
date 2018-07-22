@@ -21,9 +21,9 @@ Kites bổ sung thêm tầng **Service** nằm bên dưới kiến trúc MVC, nh
 
 Từ trên xuống dưới thì kiến trúc của Kites-MVC được thể hiện theo thứ tự như sau:
 
-1. MVC Layer
-2. Service Layer (*)
-3. Data Access Objects Layer - Truy xuất tới cơ sở dữ liệu hoặc tới các hệ thống khác như LDAP, Web Service, ...
+* 1. MVC Layer
+* 2. Service Layer (*)
+* 3. Data Access Objects Layer - Truy xuất tới cơ sở dữ liệu hoặc tới các hệ thống khác như LDAP, Web Service, ...
 
 ### Xây dựng một ứng dụng Kites MVC?
 {: #kites-init-mvc}
@@ -64,7 +64,7 @@ Bố cục của dự án được tổ chức như hình sau đây.
 </section>
 
 #### #3. Thiết lập cấu hình
-{: #kites-init-mvc-2 .code}
+{: #kites-init-mvc-3 .code}
 
 Lưu ý: Thiết lập cấu hình kết nối cho kites trong file `kites.config.json`
 
