@@ -73,14 +73,15 @@ docker-compose build
 docker-compose up
 ```
 
-## Templates - Các khuôn mẫu dự án dựng sẵn
+## Templates implementation
 
+Sau đây là checklist các khuôn mẫu sẽ được lên kế hoạch thực hiện và cập nhật liên tục, vui lòng theo dõi:
 
-* [x] **`basic`**: Template for building from scratch (**default**, current)
+* [x] `mvc`: Assembling all into complete ship (default), [nodevn/kites-template-mvc](https://github.com/vunb/kites-template-mvc)
+* [x] **`basic`**: Template for building an application from scratch
 * [x] **`apidoc`**: Template for API Documentation, [nodevn/kites-template-apidoc](https://github.com/nodevn/kites-template-apidoc)
 * [x] `express`: Template for Express Application, [nodevn/kites-template-express](https://github.com/vunb/kites-template-express)
 * [ ] `restful`: Template for generating a RESTful API Server, [nodevn/kites-template-restful](https://github.com/vunb/kites-template-restful)
-* [ ] `mvc`: Assembling all into complete ship (default), [nodevn/kites-template-mvc](https://github.com/vunb/kites-template-mvc)
 * [ ] `spa`: Template for generating a Single Page Application (SPA)
 * [ ] `cms`: Template for generating a Content Management System (CMS)
 * [ ] `chat`: Template for generating a Chat application

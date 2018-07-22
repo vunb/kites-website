@@ -5,8 +5,6 @@ title : Documentation
 
 # Documentation
 
-* TODO: Need to update
-
 <div markdown="1">
 
 ### kites
